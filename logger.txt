@@ -58,3 +58,8 @@ Method -> GET - Time -> 1782660643912 - URL -> /api/users/ - StatusCode -> 200
 Method -> GET - Time -> 1782660659600 - URL -> /api/users/ - StatusCode -> 200
 Method -> GET - Time -> 1782660668782 - URL -> /api/users/ - StatusCode -> 200
 Method -> GET - Time -> 1782660821837 - URL -> /api/users/ - StatusCode -> 200
+Method -> GET - Time -> 1782662945746 - URL -> /api/users/ - StatusCode -> 200
+Method -> GET - Time -> 1782662959611 - URL -> /api/users/ - StatusCode -> 200
+Method -> GET - Time -> 1782662968678 - URL -> /api/users/ - StatusCode -> 200
+Method -> GET - Time -> 1782662979910 - URL -> /api/users/ - StatusCode -> 200
+Method -> GET - Time -> 1782663099400 - URL -> /api/users/ - StatusCode -> 200

@@ -5,18 +5,18 @@ import { pool } from "../db";
 
 const auth = () => {
   return async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.headers.authorization;
-
-    if (!token) {
-      res.status(401).json({
-        success: false,
-        message: "Unauthorized access!!",
-        data: {},
-      });
-      return;
-    }
-
     try {
+      const token = req.headers.authorization;
+
+      if (!token) {
+        res.status(401).json({
+          success: false,
+          message: "Unauthorized access!!",
+          data: {},
+        });
+        return;
+      }
+
       const decoded = jwt.verify(token, config.secret_key) as JwtPayload;
 
       const userData = await pool.query(
@@ -37,7 +37,7 @@ const auth = () => {
         return;
       }
 
-      if(!user.is_active){
+      if (!user.is_active) {
         res.status(403).json({
           success: false,
           message: "Forbidden!",
@@ -46,16 +46,11 @@ const auth = () => {
         return;
       }
 
-
-    } catch (error: any) {
-      return res.status(401).json({
-        success: false,
-        message: "Unauthorized access!",
-        data: {},
-      });
+      req.user = decoded;
+      next();
+    } catch (error) {
+      next(error);
     }
-
-    next();
   };
 };
 
