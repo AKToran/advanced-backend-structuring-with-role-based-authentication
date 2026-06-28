@@ -1,0 +1,2 @@
+Method -> POST - Time -> 1782641238758 - URL -> /api/auth/login
+Method -> GET - Time -> 1782641247176 - URL -> /api/users/
