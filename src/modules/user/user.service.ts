@@ -39,7 +39,9 @@ const getSingleUserFromDB = async (id : string) =>{
       [id],
     );
 
-  delete result.rows[0].password;
+  // without optional chaining error:
+  // "message": "Cannot convert undefined or null to object",
+  delete result.rows[0]?.password;
   return result;
 }
 
