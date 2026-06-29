@@ -9,7 +9,9 @@ const config = {
   connection_string: process.env.CONNECTION_STRING as string,
   port: process.env.PORT,
   secret_key: process.env.SECRET_KEY as string,
-  refresh_key: process.env.REFRESH_KEY as string
+  refresh_key: process.env.REFRESH_KEY as string,
+  access_exp_time: process.env.ACCESS_EXP_TIME,
+  refresh_key_exp_time: process.env.REFRESH_KEY_EXP_TIME
 }
 
 export default config;
