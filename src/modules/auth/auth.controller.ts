@@ -4,10 +4,19 @@ import { authService } from "./auth.service";
 const loginUser = async (req: Request, res: Response) => {
   try {
     const result = await authService.loginUserInDB(req.body);
+
+    const { refreshToken } = result;
+
+    res.cookie("refreshToken", refreshToken, {
+      secure: false, // production -> true
+      httpOnly: true,
+      sameSite: 'lax'
+    })
+
     res.status(201).json({
       success: true,
       message: "Login successful.",
-      data: result,
+      data: result.accessToken,
     });
   } catch (error: any) {
     res.status(500).json({

@@ -22,3 +22,5 @@ Method -> GET - Time -> 1782720540308 - URL -> /api/users/
 Method -> GET - Time -> 1782720554603 - URL -> /api/users
 Method -> GET - Time -> 1782720594141 - URL -> /api/users/
 Method -> GET - Time -> 1782720603988 - URL -> /api/users/
+Method -> GET - Time -> 1782731311417 - URL -> /api/users
+Method -> POST - Time -> 1782745067581 - URL -> /api/auth/login
