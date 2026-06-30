@@ -9,6 +9,7 @@ import { authRoute } from "./modules/auth/auth.route";
 import logger from "./middleware/logger";
 import CookieParser from "cookie-parser";
 import cors from "cors";
+import globalErrorHandler from "./middleware/globalErrorHandler";
 
 const app: Application = express();
 
@@ -36,5 +37,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/api/users", userRoute);
 app.use("/api/profile", profileRoute);
 app.use("/api/auth", authRoute);
+
+app.use(globalErrorHandler);
 
 export default app;
